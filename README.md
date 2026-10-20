@@ -55,6 +55,7 @@ These figures are from the notebook's saved holdout outputs:
 | --- | ---: | ---: | ---: | ---: | ---: |
 | Random Forest | 1,638 | 11 | 5 | 0.99907 | 0.99708 |
 | XGBoost | 1,637 | 29 | 6 | 0.99899 | 0.99793 |
+| Logistic Regression | 1,555 | 20,678 | 88 | 0.99031 | 0.67058 |
 
 Random Forest made fewer false-positive and false-negative predictions at the notebook's default classification threshold. XGBoost had a slightly higher PR AUC. Neither result proves how the models will perform on future transactions: the notebook uses a random holdout from the same dataset, not a later time period or an independent dataset.
 
