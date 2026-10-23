@@ -12,7 +12,7 @@ The analysis explores fraud patterns, creates balance and transaction features, 
 
 The notebook reports 6,362,620 transactions and 8,213 fraud cases, approximately 0.129% of the data. It reports no missing values. The transaction types are CASH_IN, CASH_OUT, DEBIT, PAYMENT, and TRANSFER.
 
-The dataset file is expected at data/raw/Fraud.csv. The notebook should be run with the repository root as its working directory if its data-loading cell uses that path.
+The dataset file is expected at data/raw/Fraud.csv. Run the notebook from the repository root so its data-loading cell can find the dataset. Its model-saving cell searches upward for the repository root and always writes to the root artifacts/ folder, including when Jupyter starts in notebooks/.
 
 ## Findings from the saved notebook run
 
@@ -72,7 +72,7 @@ The Streamlit app is in app/streamlit_app.py. From the repository root, install 
     python -m pip install -r requirements.txt
     python -m streamlit run app/streamlit_app.py
 
-The inference module expects the model at artifacts/xgb_fraud_detection_model.pkl. A model file is currently located under notebooks/artifacts/, which is a different path. The Dockerfile also expects the root artifacts path.
+The inference module and Dockerfile expect artifacts/xgb_fraud_detection_model.pkl at the repository root. The notebook training cell now detects the repository root from either the root or notebooks/ working directory and saves the model there.
 
 The notebook's trained feature matrix and the feature list assembled by the inference module do not currently match. Align the model artifact path and feature preprocessing before using app predictions. The Docker image is not buildable until the expected root artifact is supplied.
 
