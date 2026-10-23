@@ -8,6 +8,9 @@ A machine learning prototype that analyzes transaction data, compares fraud clas
 
 The analysis explores fraud patterns, creates balance and transaction features, and evaluates Logistic Regression, Random Forest, and XGBoost. It also visualizes XGBoost explanations with SHAP.
 
+## Deployment Link 
+https://fraud-transaction-detection-1-9f43.onrender.com/
+
 ## Dataset
 
 The notebook reports 6,362,620 transactions and 8,213 fraud cases, approximately 0.129% of the data. It reports no missing values. The transaction types are CASH_IN, CASH_OUT, DEBIT, PAYMENT, and TRANSFER.
